@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
-import mongoose from "mongoose"
+import { dbconnect } from "./config/dbconnect.js";
+import mycurdroute from "./route/curdroute.js";
 
 dotenv.config();
 
@@ -8,17 +9,12 @@ dotenv.config();
 //uOY9dxMXCKIlbH5q
 
 const app=express();
+dbconnect();
+app.use(express.json())
+app.use("/curd",mycurdroute)
 
 let PORT=process.env.PORT||3000
-let URL=process.env.MONGO_URL
 
-   try{
-         mongoose.connect(URL) ;
-         console.log("database connected") 
-   }
-   catch(error){
-              console.log("error",error)
-   }
 
 
 app.get("/",(req,res)=>{
