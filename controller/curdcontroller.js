@@ -14,4 +14,12 @@ export const postData=async(req,res)=>{
 
 }
 
+export const putData=async(req,res)=>{
+       let data=await myProductModel.updateOne(req.params,{
+         $set:req.body
+       })
+       res.send(data)
+}
+
+
 
