@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+
 const myAuthSchema=new mongoose.Schema({
     
     fullname:{
@@ -11,10 +12,12 @@ const myAuthSchema=new mongoose.Schema({
         required:true,
         unique:true
     },
+    
     password:{
-        type:Number,
+        type:String,
         required:true
     }
+    
 })
 
 const myAuthModel=mongoose.model("auth",myAuthSchema);
