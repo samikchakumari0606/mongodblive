@@ -16,6 +16,11 @@ const myAuthSchema=new mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    gender:{
+        type:String,
+        mygender:["Male","Female"]
+       
     }
     
 })
