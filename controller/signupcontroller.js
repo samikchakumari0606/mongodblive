@@ -1,6 +1,7 @@
 import myAuthModel from "../model/authmodel.js";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
+
 
 export const signup=async(req,res)=>{
     
